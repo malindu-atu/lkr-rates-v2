@@ -1,0 +1,37 @@
+name: Daily Exchange Rate Scrape
+
+on:
+  # 2:00 AM UTC = 7:30 AM Sri Lanka time (UTC+5:30)
+  schedule:
+    - cron: "0 2 * * *"
+  # Manual trigger from GitHub Actions tab
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    name: Scrape bank rates
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Trigger scrape endpoint
+        run: |
+          echo "Triggering rate scrape..."
+          RESPONSE=$(curl -s -w "\n%{http_code}" \
+            -X POST \
+            -H "Authorization: Bearer ${{ secrets.SCRAPE_SECRET }}" \
+            -H "Content-Type: application/json" \
+            "${{ secrets.SITE_URL }}/api/trigger-scrape")
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | head -n-1)
+
+          echo "Status: $HTTP_CODE"
+          echo "Response: $BODY"
+
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "Scrape failed"
+            exit 1
+          fi
+
+          echo "Done"
