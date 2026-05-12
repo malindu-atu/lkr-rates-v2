@@ -61,7 +61,7 @@ Most people exchanging money in Sri Lanka visit multiple bank websites to find t
 ┌─────────────────────────────────────────────────────────┐
 │   Next.js 14 Frontend                                   │
 │   React dashboard — Recharts + Tailwind CSS             │
-│   Trilingual — EN / සිං / தமிழ்                          │
+│   Trilingual — EN / සිං / தமிழ்                           │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -118,7 +118,7 @@ SUPABASE_SERVICE_ROLE_KEY=your_service_role_key_here
 SCRAPE_SECRET=any_random_string_you_choose
 ```
 
-> `SCRAPE_SECRET` is a password that protects the `/api/trigger-scrape` endpoint. Use any random string — e.g. `lkr-secret-abc123xyz`.
+> `SCRAPE_SECRET` is a password that protects the `/api/trigger-scrape` endpoint. Use any random string — e.g. `lkr-secret-123xyz`.
 
 ### 4. Seed the database
 
