@@ -1,4 +1,4 @@
-# 🏦 LKR Exchange Rates
+# LKR Exchange Rates
 
 > Compare live TT buying and selling exchange rates from all major Sri Lankan banks — updated automatically every morning.
 
@@ -21,15 +21,15 @@ Most people exchanging money in Sri Lanka visit multiple bank websites to find t
 
 | Feature | Details |
 |---|---|
-| 🏦 10 banks | BOC, People's Bank, Commercial Bank, Sampath, HNB, NSB, NDB, DFCC, Seylan, Union Bank |
-| 💱 24 currencies | USD, EUR, GBP, AUD, CAD, SGD, JPY, CHF, CNY, INR, SAR, AED, MYR, THB, NZD, HKD, SEK, NOK, DKK, KWD, QAR, BHD, OMR, JOD |
-| 🏆 Best rate badge | Instantly see which bank offers the best buy and sell rate today |
-| 🔄 Converter | Type any amount — see FX → LKR and LKR → FX across all banks simultaneously |
-| 📈 30-day chart | Visualise how rates have moved over the last month, per bank |
-| 🔃 Sortable table | Sort by buying rate, selling rate, or spread |
-| 🔍 Search | Filter banks by name instantly |
-| 🔤 Trilingual UI | English, සිංහල, தமிழ் |
-| ⚡ Zero cost | Vercel free tier + Supabase free tier + GitHub Actions free tier |
+|  10 banks | BOC, People's Bank, Commercial Bank, Sampath, HNB, NSB, NDB, DFCC, Seylan, Union Bank |
+|  24 currencies | USD, EUR, GBP, AUD, CAD, SGD, JPY, CHF, CNY, INR, SAR, AED, MYR, THB, NZD, HKD, SEK, NOK, DKK, KWD, QAR, BHD, OMR, JOD |
+|  Best rate badge | Instantly see which bank offers the best buy and sell rate today |
+|  Converter | Type any amount — see FX → LKR and LKR → FX across all banks simultaneously |
+|  30-day chart | Visualise how rates have moved over the last month, per bank |
+|  Sortable table | Sort by buying rate, selling rate, or spread |
+|  Search | Filter banks by name instantly |
+|  Trilingual UI | English, සිංහල, தமிழ் |
+|  Zero cost | Vercel free tier + Supabase free tier + GitHub Actions free tier |
 
 ---
 
@@ -131,7 +131,7 @@ npm run scrape
 You should see output like:
 
 ```
-🏦  LKR Rate Scraper — 2026-05-12
+  LKR Rate Scraper — 2026-05-12
 
   → Bank of Ceylon
     ✓ 16 rates
@@ -141,9 +141,9 @@ You should see output like:
     ✓ 17 rates
   ...
 
-📊  101 rates from 10 banks
-📤  Upserting to Supabase…
-✅  Done!
+  101 rates from 10 banks
+  Upserting to Supabase…
+  Done!
 ```
 
 ### 5. Start the development server
