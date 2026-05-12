@@ -4,32 +4,30 @@ import type { Lang } from "@/app/page";
 type T = (typeof I18N)[Lang];
 
 export default function Footer({ t }: { t: T }) {
-  const sources = [
-    ["BOC",      "https://www.boc.lk/rates-tariff"],
-    ["People's", "https://www.peoplesbank.lk/exchange-rates/"],
-    ["ComBank",  "https://www.combank.lk/rates-tariff#exchange-rates"],
-    ["Sampath",  "https://www.sampath.lk/rates-and-charges?activeTab=exchange-rates"],
-    ["HNB",      "https://www.hnb.lk/exchange-rates"],
-    ["NSB",      "https://www.nsb.lk/rates-tarriffs/nsb-exchange-rates/"],
-    ["NDB",      "https://www.ndbbank.com/rates/exchange-rates"],
-    ["DFCC",     "https://www.dfcc.lk/rates-and-tariff/exchange-rates"],
-    ["Seylan",   "https://www.seylan.lk/exchange-rates"],
-    ["Union",    "https://www.unionb.com/exchange-rates"],
-  ];
-
   return (
-    <div className="space-y-4 mt-4">
-      <div className="border-l-2 border-border pl-4">
+    <div className="space-y-4">
+      {/* Disclaimer */}
+      <div className="border-l-2 border-border pl-4 py-1">
         <p className="text-xs font-mono text-muted leading-relaxed">{t.notice}</p>
       </div>
 
+      {/* Links to source banks */}
       <div className="pt-2 border-t border-border">
-        <p className="text-[10px] font-mono text-muted uppercase tracking-widest mb-3">
-          Source pages
-        </p>
+        <p className="text-[10px] font-mono text-muted uppercase tracking-widest mb-3">Source pages</p>
         <div className="flex flex-wrap gap-x-4 gap-y-1">
-          {sources.map(([label, url]) => (
-            
+          {[
+            ["BOC", "https://www.boc.lk/rate-and-tariff/exchange-rates"],
+            ["People's", "https://www.peoplesbank.lk/exchange-rates/"],
+            ["ComBank", "https://www.combank.lk/rates-tariffs#exchange-rate"],
+            ["Sampath", "https://www.sampath.lk/en/exchange-rates"],
+            ["HNB", "https://www.hnb.net/rates/exchange-rates"],
+            ["NSB", "https://www.nsb.lk/exchange-rates/"],
+            ["NDB", "https://www.ndb.lk/rates-tariffs/exchange-rates/"],
+            ["DFCC", "https://www.dfcc.lk/personal/exchange-rates/"],
+            ["Seylan", "https://www.seylan.lk/personal-banking/exchange-rates"],
+            ["Union", "https://www.unionb.com/exchange-rates"],
+          ].map(([label, url]) => (
+            <a
               key={label}
               href={url}
               target="_blank"
