@@ -23,8 +23,9 @@ if (!SUPABASE_URL || !SUPABASE_KEY) {
 }
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
-  auth: { persistSession: false },
-  realtime: { transport: ws },
+  auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false },
+  db: { schema: "public" },
+  global: { fetch: fetch.bind(globalThis) },
 });
 const TODAY = new Date().toISOString().slice(0, 10);
 
