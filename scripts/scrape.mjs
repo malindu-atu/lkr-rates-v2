@@ -10,6 +10,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { load as cheerioLoad } from "cheerio";
 import puppeteer from "puppeteer";
+import ws from "ws";
 
 // ── Supabase ──────────────────────────────────────────────────────────────────
 
@@ -21,7 +22,10 @@ if (!SUPABASE_URL || !SUPABASE_KEY) {
   process.exit(1);
 }
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, { auth: { persistSession: false } });
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
+  auth: { persistSession: false },
+  realtime: { transport: ws },
+});
 const TODAY = new Date().toISOString().slice(0, 10);
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
